@@ -4,16 +4,16 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
-(function($) {
-
-	PhotoSwipe.breakpoints({
+(function ($) {
+    
+	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
 		medium: '(max-width: 980px)',
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)'
 	});
-
+    
 	$(function() {
 
 		var	$window = $(window),
@@ -32,10 +32,10 @@
 			$('form').placeholder();
 
 		// Prioritize "important" elements on medium.
-			PhotoSwipe.on('+medium -medium', function() {
+			skel.on('+medium -medium', function() {
 				$.prioritize(
 					'.important\\28 medium\\29',
-					PhotoSwipe.breakpoint('medium').active
+					skel.breakpoint('medium').active
 				);
 			});
 
@@ -44,7 +44,8 @@
 
 		// Gallery.
 			$('.gallery').each(function() {
-
+                
+                
 				var	$gallery = $(this),
 					$content = $gallery.find('.content');
 
@@ -55,13 +56,13 @@
 
 				// Tabs.
 					$gallery.each( function() {
-
+                        
 						var $this = $(this),
 							$tabs = $this.find('.tabs a'),
 							$media = $this.find('.media');
 
 						$tabs.on('click', function(e) {
-
+                            
 							var $this = $(this),
 								tag = $this.data('tag');
 
